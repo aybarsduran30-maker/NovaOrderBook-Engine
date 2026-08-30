@@ -1,0 +1,28 @@
+#pragma once
+#include "Order.hpp"
+#include <map>
+#include <deque>
+#include <unordered_map>
+#include <vector>
+
+class OrderBook {
+public:
+    OrderBook() = default;
+
+    void addOrder(const Order& order);
+    void cancelOrder(uint64_t orderId);
+    
+    double getBestBid() const;
+    double getBestAsk() const;
+    
+    const std::vector<Trade>& getTradeHistory() const { return tradeHistory; }
+
+private:
+    std::map<double, std::deque<Order>, std::greater<double>> bids;
+    std::map<double, std::deque<Order>, std::less<double>> asks;
+    
+    std::unordered_map<uint64_t, std::pair<Side, double>> orderLocationMap;
+    std::vector<Trade> tradeHistory;
+
+    void matchOrders();
+};
