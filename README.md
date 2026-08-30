@@ -20,15 +20,13 @@ Tested & Benchmarked:** Validated on automated test suites with 1,000,000 random
 
 Stress tests executed on **1M randomized buy/sell orders**:
 
- Metric | Base Implementation (`std::map`) | Optimized (Memory Pool + Flat Array) | Improvement |
+ Metric | Base Implementation (`std::map`) Optimized (Memory Pool + Flat Array) Improvement 
 |
 
-
-
-Avg Latency** | `510.29 ns` | **`158.40 ns`** | **~3.2x Faster** |
-Throughput** | `1.95M ops/sec` | **`6.31M ops/sec`** | **+223%** |
-Runtime (1M Orders)** | `0.5103 s` | **`0.1584 s`** | **69% time reduced** |
-Heap Memory Usage** | Dynamic ($O(\log N)$ tree nodes) | Fixed ($O(1)$ pre-allocated pool) | **Zero runtime allocations** |
+Avg Latency**  `510.29 ns`  **`158.40 ns`**  **~3.2x Faster** 
+Throughput**  `1.95M ops/sec`  **`6.31M ops/sec`**  **+223%** 
+Runtime (1M Orders)** `0.5103 s`  **`0.1584 s`**   **69% time reduced** |
+Heap Memory Usage**  Dynamic ($O(\log N)$ tree nodes)  Fixed ($O(1)$ pre-allocated pool)  **Zero runtime allocations** 
 
 
 
