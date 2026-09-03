@@ -23,4 +23,5 @@ Stress tests executed on 1,000,000 randomized buy/sell orders:
 ```bash
 g++ -std=c++20 -O3 -march=native -Iinclude tests/benchmark.cpp src/OrderBook.cpp -o nova_benchmark.exe
 ./nova_benchmark.exe
-
+* **Python Bindings & Terminal UI:** Integrated C++20 engine with Python via Pybind11 and implemented a live terminal-based order book depth stream (`simulate_stream.py`) visualizing real-time bid/ask spreads, market depth, and executions.
+* **Performance Validation:** Validated real-time event streaming and dynamic cancellations alongside core benchmark results (~9.28M orders/sec throughput, ~107.66 ns latency).
