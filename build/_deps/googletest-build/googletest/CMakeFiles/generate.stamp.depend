@@ -1,0 +1,13 @@
+# CMake generation dependency list for this directory.
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-src/googletest/CMakeLists.txt
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-src/googletest/cmake/internal_utils.cmake
+C:/mingw64/share/cmake-4.4/Modules/CheckCSourceCompiles.cmake
+C:/mingw64/share/cmake-4.4/Modules/CheckIncludeFile.cmake
+C:/mingw64/share/cmake-4.4/Modules/CheckLibraryExists.cmake
+C:/mingw64/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake
+C:/mingw64/share/cmake-4.4/Modules/FindPackageMessage.cmake
+C:/mingw64/share/cmake-4.4/Modules/FindPython/Support.cmake
+C:/mingw64/share/cmake-4.4/Modules/FindPython3.cmake
+C:/mingw64/share/cmake-4.4/Modules/FindThreads.cmake
+C:/mingw64/share/cmake-4.4/Modules/Internal/CheckCommon.cmake
+C:/mingw64/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake

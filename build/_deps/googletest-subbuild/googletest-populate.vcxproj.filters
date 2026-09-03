@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\812f3f8a16c503af7e9126500709d296\googletest-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\812f3f8a16c503af7e9126500709d296\googletest-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\812f3f8a16c503af7e9126500709d296\googletest-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\812f3f8a16c503af7e9126500709d296\googletest-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\812f3f8a16c503af7e9126500709d296\googletest-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\812f3f8a16c503af7e9126500709d296\googletest-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\812f3f8a16c503af7e9126500709d296\googletest-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\812f3f8a16c503af7e9126500709d296\googletest-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\f11990a7b8da234e237532dbe7293ac1\googletest-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\f27a383ff58182f3e66a9e7eaa20f95b\googletest-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\googletest-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CA627CA6-A45E-3CB0-928B-A8FEBD39AAD2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

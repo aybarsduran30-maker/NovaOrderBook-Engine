@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/nova_tests_e3b0c442_RelWithDebInfo_tests.cmake")
+  include("C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/nova_tests_e3b0c442_RelWithDebInfo_tests.cmake")
+else()
+  add_test(nova_tests_NOT_BUILT nova_tests_NOT_BUILT)
+endif()

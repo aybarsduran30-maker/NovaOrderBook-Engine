@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8903E9D9-1BF7-36F3-BAAC-B05EB3695AD3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ZERO_CHECK</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\aybob\Desktop\NovaOrderBook-Engine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\aybob\Desktop\NovaOrderBook-Engine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\aybob\Desktop\NovaOrderBook-Engine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\aybob\Desktop\NovaOrderBook-Engine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\0317875335543451433ce81a96dd80a6\generate.stamp.rule">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\mingw64\bin\cmake.exe -SC:/Users/aybob/Desktop/NovaOrderBook-Engine -BC:/Users/aybob/Desktop/NovaOrderBook-Engine/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/NovaOrderBookEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\aybob\Desktop\NovaOrderBook-Engine\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeCCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeCXXCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeRCCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeSystem.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\FindPythonLibsNew.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\JoinPaths.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\pybind11Common.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\pybind11Tools.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCXXInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCommonLanguageInclude.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeDependentOption.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeLanguageInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakePackageConfigHelpers.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeParseArguments.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeRCInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCXXCompilerFlag.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCXXSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckIncludeFile.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckLibraryExists.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\ExternalProject\shared_internal_commands.cmake;C:\mingw64\share\cmake-4.4\Modules\FetchContent.cmake;C:\mingw64\share\cmake-4.4\Modules\FetchContent\CMakeLists.cmake.in;C:\mingw64\share\cmake-4.4\Modules\FindGit.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPackageHandleStandardArgs.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPackageMessage.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPython\Support.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPython3.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPythonInterp.cmake;C:\mingw64\share\cmake-4.4\Modules\FindThreads.cmake;C:\mingw64\share\cmake-4.4\Modules\GNUInstallDirs.cmake;C:\mingw64\share\cmake-4.4\Modules\GoogleTest.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckCommon.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckCompilerFlag.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckFlagCommonConfig.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;C:\mingw64\share\cmake-4.4\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-build\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\mingw64\bin\cmake.exe -SC:/Users/aybob/Desktop/NovaOrderBook-Engine -BC:/Users/aybob/Desktop/NovaOrderBook-Engine/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/NovaOrderBookEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\aybob\Desktop\NovaOrderBook-Engine\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeCCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeCXXCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeRCCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeSystem.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\FindPythonLibsNew.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\JoinPaths.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\pybind11Common.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\pybind11Tools.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCXXInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCommonLanguageInclude.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeDependentOption.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeLanguageInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakePackageConfigHelpers.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeParseArguments.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeRCInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCXXCompilerFlag.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCXXSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckIncludeFile.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckLibraryExists.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\ExternalProject\shared_internal_commands.cmake;C:\mingw64\share\cmake-4.4\Modules\FetchContent.cmake;C:\mingw64\share\cmake-4.4\Modules\FetchContent\CMakeLists.cmake.in;C:\mingw64\share\cmake-4.4\Modules\FindGit.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPackageHandleStandardArgs.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPackageMessage.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPython\Support.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPython3.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPythonInterp.cmake;C:\mingw64\share\cmake-4.4\Modules\FindThreads.cmake;C:\mingw64\share\cmake-4.4\Modules\GNUInstallDirs.cmake;C:\mingw64\share\cmake-4.4\Modules\GoogleTest.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckCommon.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckCompilerFlag.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckFlagCommonConfig.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;C:\mingw64\share\cmake-4.4\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-build\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\mingw64\bin\cmake.exe -SC:/Users/aybob/Desktop/NovaOrderBook-Engine -BC:/Users/aybob/Desktop/NovaOrderBook-Engine/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/NovaOrderBookEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\aybob\Desktop\NovaOrderBook-Engine\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeCCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeCXXCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeRCCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeSystem.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\FindPythonLibsNew.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\JoinPaths.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\pybind11Common.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\pybind11Tools.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCXXInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCommonLanguageInclude.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeDependentOption.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeLanguageInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakePackageConfigHelpers.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeParseArguments.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeRCInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCXXCompilerFlag.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCXXSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckIncludeFile.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckLibraryExists.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\ExternalProject\shared_internal_commands.cmake;C:\mingw64\share\cmake-4.4\Modules\FetchContent.cmake;C:\mingw64\share\cmake-4.4\Modules\FetchContent\CMakeLists.cmake.in;C:\mingw64\share\cmake-4.4\Modules\FindGit.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPackageHandleStandardArgs.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPackageMessage.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPython\Support.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPython3.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPythonInterp.cmake;C:\mingw64\share\cmake-4.4\Modules\FindThreads.cmake;C:\mingw64\share\cmake-4.4\Modules\GNUInstallDirs.cmake;C:\mingw64\share\cmake-4.4\Modules\GoogleTest.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckCommon.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckCompilerFlag.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckFlagCommonConfig.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;C:\mingw64\share\cmake-4.4\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-build\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\mingw64\bin\cmake.exe -SC:/Users/aybob/Desktop/NovaOrderBook-Engine -BC:/Users/aybob/Desktop/NovaOrderBook-Engine/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/NovaOrderBookEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\aybob\Desktop\NovaOrderBook-Engine\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeCCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeCXXCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeRCCompiler.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\4.4.2\CMakeSystem.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\CMakeLists.txt;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\FindPythonLibsNew.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\JoinPaths.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\pybind11Common.cmake;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-src\tools\pybind11Tools.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCXXInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeCommonLanguageInclude.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeDependentOption.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeGenericSystem.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeInitializeConfigs.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeLanguageInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakePackageConfigHelpers.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeParseArguments.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeRCInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeSystemSpecificInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\CMakeSystemSpecificInitialize.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCXXCompilerFlag.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckCXXSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckIncludeFile.cmake;C:\mingw64\share\cmake-4.4\Modules\CheckLibraryExists.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Compiler\MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\ExternalProject\shared_internal_commands.cmake;C:\mingw64\share\cmake-4.4\Modules\FetchContent.cmake;C:\mingw64\share\cmake-4.4\Modules\FetchContent\CMakeLists.cmake.in;C:\mingw64\share\cmake-4.4\Modules\FindGit.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPackageHandleStandardArgs.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPackageMessage.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPython\Support.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPython3.cmake;C:\mingw64\share\cmake-4.4\Modules\FindPythonInterp.cmake;C:\mingw64\share\cmake-4.4\Modules\FindThreads.cmake;C:\mingw64\share\cmake-4.4\Modules\GNUInstallDirs.cmake;C:\mingw64\share\cmake-4.4\Modules\GoogleTest.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckCommon.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckCompilerFlag.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckFlagCommonConfig.cmake;C:\mingw64\share\cmake-4.4\Modules\Internal\CheckSourceCompiles.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Linker\MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Linker\Windows-MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-Initialize.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC-C.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC-CXX.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows-MSVC.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\Windows.cmake;C:\mingw64\share\cmake-4.4\Modules\Platform\WindowsPaths.cmake;C:\mingw64\share\cmake-4.4\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-build\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp;C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\pybind11-subbuild\CMakeFiles\06a38c2699317a9b3e134f4e2bbc13bf\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CDD2E98B-F7EC-3010-AB80-49B362AD2322}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

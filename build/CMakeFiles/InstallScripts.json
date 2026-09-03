@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/cmake_install.cmake",
+		"C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-build/cmake_install.cmake",
+		"C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-build/googletest/cmake_install.cmake",
+		"C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/pybind11-build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

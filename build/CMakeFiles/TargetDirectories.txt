@@ -1,0 +1,16 @@
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/nova_core.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/nova_tests.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/nova_cli.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/nova_engine.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/nova_benchmark.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-build/CMakeFiles/RUN_TESTS.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-build/CMakeFiles/ALL_BUILD.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-build/googletest/CMakeFiles/gtest.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-build/googletest/CMakeFiles/RUN_TESTS.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-build/googletest/CMakeFiles/ALL_BUILD.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/pybind11-build/CMakeFiles/RUN_TESTS.dir
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/pybind11-build/CMakeFiles/ALL_BUILD.dir

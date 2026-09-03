@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-subbuild\CMakeFiles\f27a383ff58182f3e66a9e7eaa20f95b\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CA627CA6-A45E-3CB0-928B-A8FEBD39AAD2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

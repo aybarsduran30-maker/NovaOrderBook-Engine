@@ -1,0 +1,192 @@
+Start testing: Sep 03 12:19 Central European Daylight Time
+----------------------------------------------------------
+1/7 Testing: OrderBookTest.AddSingleBuyOrder
+1/7 Test: OrderBookTest.AddSingleBuyOrder
+Command: "C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/Release/nova_tests.exe" "--gtest_filter=OrderBookTest.AddSingleBuyOrder" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/aybob/Desktop/NovaOrderBook-Engine/build
+"OrderBookTest.AddSingleBuyOrder" start time: Sep 03 12:19 Central European Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = OrderBookTest.AddSingleBuyOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderBookTest
+[ RUN      ] OrderBookTest.AddSingleBuyOrder
+[       OK ] OrderBookTest.AddSingleBuyOrder (13 ms)
+[----------] 1 test from OrderBookTest (13 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (13 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBookTest.AddSingleBuyOrder" end time: Sep 03 12:19 Central European Daylight Time
+"OrderBookTest.AddSingleBuyOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/7 Testing: OrderBookTest.AddSingleSellOrder
+2/7 Test: OrderBookTest.AddSingleSellOrder
+Command: "C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/Release/nova_tests.exe" "--gtest_filter=OrderBookTest.AddSingleSellOrder" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/aybob/Desktop/NovaOrderBook-Engine/build
+"OrderBookTest.AddSingleSellOrder" start time: Sep 03 12:19 Central European Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = OrderBookTest.AddSingleSellOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderBookTest
+[ RUN      ] OrderBookTest.AddSingleSellOrder
+[       OK ] OrderBookTest.AddSingleSellOrder (12 ms)
+[----------] 1 test from OrderBookTest (12 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (12 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBookTest.AddSingleSellOrder" end time: Sep 03 12:19 Central European Daylight Time
+"OrderBookTest.AddSingleSellOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: OrderBookTest.FullMatchExecution
+3/7 Test: OrderBookTest.FullMatchExecution
+Command: "C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/Release/nova_tests.exe" "--gtest_filter=OrderBookTest.FullMatchExecution" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/aybob/Desktop/NovaOrderBook-Engine/build
+"OrderBookTest.FullMatchExecution" start time: Sep 03 12:19 Central European Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = OrderBookTest.FullMatchExecution
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderBookTest
+[ RUN      ] OrderBookTest.FullMatchExecution
+[       OK ] OrderBookTest.FullMatchExecution (13 ms)
+[----------] 1 test from OrderBookTest (13 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (13 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBookTest.FullMatchExecution" end time: Sep 03 12:19 Central European Daylight Time
+"OrderBookTest.FullMatchExecution" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: OrderBookTest.PartialFillExecution
+4/7 Test: OrderBookTest.PartialFillExecution
+Command: "C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/Release/nova_tests.exe" "--gtest_filter=OrderBookTest.PartialFillExecution" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/aybob/Desktop/NovaOrderBook-Engine/build
+"OrderBookTest.PartialFillExecution" start time: Sep 03 12:19 Central European Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = OrderBookTest.PartialFillExecution
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderBookTest
+[ RUN      ] OrderBookTest.PartialFillExecution
+[       OK ] OrderBookTest.PartialFillExecution (12 ms)
+[----------] 1 test from OrderBookTest (12 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (12 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBookTest.PartialFillExecution" end time: Sep 03 12:19 Central European Daylight Time
+"OrderBookTest.PartialFillExecution" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/7 Testing: OrderBookTest.NoMatchWhenSpreadCrossesOpposite
+5/7 Test: OrderBookTest.NoMatchWhenSpreadCrossesOpposite
+Command: "C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/Release/nova_tests.exe" "--gtest_filter=OrderBookTest.NoMatchWhenSpreadCrossesOpposite" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/aybob/Desktop/NovaOrderBook-Engine/build
+"OrderBookTest.NoMatchWhenSpreadCrossesOpposite" start time: Sep 03 12:19 Central European Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = OrderBookTest.NoMatchWhenSpreadCrossesOpposite
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderBookTest
+[ RUN      ] OrderBookTest.NoMatchWhenSpreadCrossesOpposite
+[       OK ] OrderBookTest.NoMatchWhenSpreadCrossesOpposite (12 ms)
+[----------] 1 test from OrderBookTest (12 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (13 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBookTest.NoMatchWhenSpreadCrossesOpposite" end time: Sep 03 12:19 Central European Daylight Time
+"OrderBookTest.NoMatchWhenSpreadCrossesOpposite" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/7 Testing: OrderBookTest.CancelOrderRemovesLiquidity
+6/7 Test: OrderBookTest.CancelOrderRemovesLiquidity
+Command: "C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/Release/nova_tests.exe" "--gtest_filter=OrderBookTest.CancelOrderRemovesLiquidity" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/aybob/Desktop/NovaOrderBook-Engine/build
+"OrderBookTest.CancelOrderRemovesLiquidity" start time: Sep 03 12:19 Central European Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = OrderBookTest.CancelOrderRemovesLiquidity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderBookTest
+[ RUN      ] OrderBookTest.CancelOrderRemovesLiquidity
+[       OK ] OrderBookTest.CancelOrderRemovesLiquidity (13 ms)
+[----------] 1 test from OrderBookTest (13 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (13 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBookTest.CancelOrderRemovesLiquidity" end time: Sep 03 12:19 Central European Daylight Time
+"OrderBookTest.CancelOrderRemovesLiquidity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/7 Testing: OrderBookTest.PoolAllocationRecycling
+7/7 Test: OrderBookTest.PoolAllocationRecycling
+Command: "C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/Release/nova_tests.exe" "--gtest_filter=OrderBookTest.PoolAllocationRecycling" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/aybob/Desktop/NovaOrderBook-Engine/build
+"OrderBookTest.PoolAllocationRecycling" start time: Sep 03 12:19 Central European Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = OrderBookTest.PoolAllocationRecycling
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OrderBookTest
+[ RUN      ] OrderBookTest.PoolAllocationRecycling
+[       OK ] OrderBookTest.PoolAllocationRecycling (13 ms)
+[----------] 1 test from OrderBookTest (13 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (13 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"OrderBookTest.PoolAllocationRecycling" end time: Sep 03 12:19 Central European Daylight Time
+"OrderBookTest.PoolAllocationRecycling" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 03 12:19 Central European Daylight Time

@@ -1,0 +1,39 @@
+import sys
+import time
+import random
+from pathlib import Path
+
+release_path = Path(__file__).resolve().parent / "build" / "Release"
+sys.path.append(str(release_path))
+
+import nova_engine
+
+def run_simulation(num_events=50000, sleep_sec=0.0):
+    book = nova_engine.OrderBook()
+    print("Simulation started. Engine loaded successfully.\n")
+
+    mid_price = 15000
+    spread = 10
+
+    for i in range(1, num_events + 1):
+        side = nova_engine.Side.BUY if random.random() < 0.5 else nova_engine.Side.SELL
+        
+        if side == nova_engine.Side.BUY:
+            price = random.randint(mid_price - spread, mid_price + spread // 2)
+        else:
+            price = random.randint(mid_price - spread // 2, mid_price + spread)
+            
+        qty = random.randint(1, 50)
+        book.addOrder(i, side, price, qty)
+
+        if i % 10000 == 0:
+            print(f"Processed: {i} orders | Best Bid: {book.getBestBid()} | Best Ask: {book.getBestAsk()} | Trades: {book.getTradeCount()}")
+
+        if sleep_sec > 0:
+            time.sleep(sleep_sec)
+
+    print("\nSimulation complete.")
+    print(f"Final State -> Trades: {book.getTradeCount()} | Best Bid: {book.getBestBid()} | Best Ask: {book.getBestAsk()}")
+
+if __name__ == "__main__":
+    run_simulation(num_events=50000)

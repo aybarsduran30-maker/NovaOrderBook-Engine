@@ -1,0 +1,19 @@
+# CMake generation dependency list for this directory.
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/4.4.2/CMakeCCompiler.cmake
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/googletest-src/CMakeLists.txt
+C:/mingw64/share/cmake-4.4/Modules/CMakeCInformation.cmake
+C:/mingw64/share/cmake-4.4/Modules/CMakeCommonLanguageInclude.cmake
+C:/mingw64/share/cmake-4.4/Modules/CMakeDependentOption.cmake
+C:/mingw64/share/cmake-4.4/Modules/CMakeLanguageInformation.cmake
+C:/mingw64/share/cmake-4.4/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/mingw64/share/cmake-4.4/Modules/Compiler/MSVC-C.cmake
+C:/mingw64/share/cmake-4.4/Modules/Compiler/MSVC.cmake
+C:/mingw64/share/cmake-4.4/Modules/GNUInstallDirs.cmake
+C:/mingw64/share/cmake-4.4/Modules/Internal/CMakeCLinkerInformation.cmake
+C:/mingw64/share/cmake-4.4/Modules/Internal/CMakeCommonLinkerInformation.cmake
+C:/mingw64/share/cmake-4.4/Modules/Linker/MSVC-C.cmake
+C:/mingw64/share/cmake-4.4/Modules/Linker/MSVC.cmake
+C:/mingw64/share/cmake-4.4/Modules/Platform/Linker/Windows-MSVC-C.cmake
+C:/mingw64/share/cmake-4.4/Modules/Platform/Linker/Windows-MSVC.cmake
+C:/mingw64/share/cmake-4.4/Modules/Platform/Windows-MSVC-C.cmake
+C:/mingw64/share/cmake-4.4/Modules/Platform/Windows-MSVC.cmake

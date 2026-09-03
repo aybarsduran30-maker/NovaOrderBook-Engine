@@ -1,0 +1,20 @@
+# CMake generation dependency list for this directory.
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/pybind11-src/CMakeLists.txt
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/pybind11-src/tools/FindPythonLibsNew.cmake
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/pybind11-src/tools/JoinPaths.cmake
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/pybind11-src/tools/pybind11Common.cmake
+C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/_deps/pybind11-src/tools/pybind11Tools.cmake
+C:/mingw64/share/cmake-4.4/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/mingw64/share/cmake-4.4/Modules/CMakeDependentOption.cmake
+C:/mingw64/share/cmake-4.4/Modules/CMakePackageConfigHelpers.cmake
+C:/mingw64/share/cmake-4.4/Modules/CMakeParseArguments.cmake
+C:/mingw64/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake
+C:/mingw64/share/cmake-4.4/Modules/CheckCXXSourceCompiles.cmake
+C:/mingw64/share/cmake-4.4/Modules/FindPackageHandleStandardArgs.cmake
+C:/mingw64/share/cmake-4.4/Modules/FindPackageMessage.cmake
+C:/mingw64/share/cmake-4.4/Modules/FindPythonInterp.cmake
+C:/mingw64/share/cmake-4.4/Modules/GNUInstallDirs.cmake
+C:/mingw64/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake
+C:/mingw64/share/cmake-4.4/Modules/Internal/CheckFlagCommonConfig.cmake
+C:/mingw64/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake
+C:/mingw64/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake

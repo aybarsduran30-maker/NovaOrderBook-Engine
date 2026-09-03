@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aybob\Desktop\NovaOrderBook-Engine\build\CMakeFiles\0317875335543451433ce81a96dd80a6\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{DFDDFFE3-FF0B-32F8-9F2A-F9A53D5E30B2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

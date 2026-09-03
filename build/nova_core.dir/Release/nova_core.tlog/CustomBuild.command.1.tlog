@@ -1,0 +1,10 @@
+^C:\USERS\AYBOB\DESKTOP\NOVAORDERBOOK-ENGINE\CMAKELISTS.TXT
+setlocal
+C:\mingw64\bin\cmake.exe -SC:/Users/aybob/Desktop/NovaOrderBook-Engine -BC:/Users/aybob/Desktop/NovaOrderBook-Engine/build --check-stamp-file C:/Users/aybob/Desktop/NovaOrderBook-Engine/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
