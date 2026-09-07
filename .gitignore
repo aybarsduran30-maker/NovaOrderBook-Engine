@@ -17,7 +17,3 @@ env/
 .vscode/
 .idea/
 .DS_Store
-
-*.txt
-!requirements.txt
-!CMakeLists.txt
