@@ -1,0 +1,19 @@
+# Repo was authored on Windows and now builds on Linux CI; normalize to LF so diffs stay clean.
+* text=auto eol=lf
+
+# Text types stated explicitly rather than left to content sniffing.
+*.cpp          text
+*.hpp          text
+*.py           text
+*.txt          text
+*.md           text
+*.yml          text
+*.yaml         text
+CMakeLists.txt text
+
+# Binaries: never diff, never convert line endings.
+*.exe   binary
+*.dll   binary
+*.so    binary
+*.dylib binary
+*.pyd   binary
