@@ -1,0 +1,49 @@
+# Builds the C++ engine with CMake on Linux and runs the GoogleTest suite
+# via ctest, on every push and pull request to main.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # CMakeLists.txt builds the nova_engine pybind11 module, so the runner
+      # needs Python headers available at configure time.
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # FetchContent clones googletest and pybind11 from GitHub on every
+      # configure. Caching the clones (not the compiled objects) skips the
+      # download. The key changes whenever CMakeLists.txt changes.
+      - name: Cache FetchContent downloads
+        uses: actions/cache@v4
+        with:
+          path: |
+            build/_deps/*-src
+            build/_deps/*-subbuild
+          key: fetchcontent-${{ runner.os }}-${{ hashFiles('CMakeLists.txt') }}
+
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build -j "$(nproc)"
+
+      - name: Run tests
+        run: ctest --test-dir build --output-on-failure
+
+      # nova_cli prints a fixed report and exits; a quick check that the
+      # engine actually runs after building.
+      - name: Smoke test the CLI
+        run: ./build/nova_cli
