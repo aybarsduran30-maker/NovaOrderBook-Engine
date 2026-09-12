@@ -50,3 +50,7 @@ target_include_directories(nova_engine PRIVATE include)
 add_executable(nova_benchmark tests/benchmark.cpp)
 target_link_libraries(nova_benchmark PRIVATE nova_core)
 target_include_directories(nova_benchmark PRIVATE include)
+
+add_executable(benchmark_engine tests/benchmark_engine.cpp src/OrderBook.cpp)
+target_include_directories(benchmark_engine PRIVATE include)
+target_compile_features(benchmark_engine PRIVATE cxx_std_20)
