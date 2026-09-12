@@ -10,6 +10,7 @@ include_directories(include)
 
 add_library(nova_core STATIC
     src/OrderBook.cpp
+    src/EnginePipeline.cpp
 )
 target_include_directories(nova_core PUBLIC include)
 

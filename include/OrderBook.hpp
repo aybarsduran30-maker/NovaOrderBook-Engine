@@ -1,8 +1,9 @@
 #pragma once
-#include <vector>
 #include <array>
+#include <vector>
 #include <cstdint>
 #include "Order.hpp"
+#include "MemoryPool.hpp"
 
 class OrderBook {
 public:
@@ -20,7 +21,9 @@ public:
 
     OrderBook();
 
-    void addOrder(uint64_t id, Side side, uint32_t price, uint32_t count);
+    void addOrder(uint64_t id, Side side, uint32_t price, uint32_t count, OrderType type = OrderType::LIMIT);
+    void addOrdersBatch(const std::vector<BatchOrder>& orders);
+    bool cancelOrderById(uint64_t orderId);
     void cancelOrder(uint32_t orderPoolIndex);
 
     uint32_t getBestBid() const { return bestBidPrice; }
@@ -30,13 +33,12 @@ public:
 private:
     std::array<PriceLevel, PRICE_RANGE> bids;
     std::array<PriceLevel, PRICE_RANGE> asks;
-    std::vector<Order> orderPool;
-    uint32_t poolHead;
+    MemoryPool<Order, MAX_ORDERS> pool;
+    std::vector<uint32_t> orderLookup;
+
     uint32_t bestBidPrice;
     uint32_t bestAskPrice;
     uint64_t tradeCount;
 
-    uint32_t allocateOrder();
-    void freeOrder(uint32_t index);
     void match(Side incomingSide, uint32_t incomingPrice, uint32_t& incomingCount, uint64_t incomingId);
 };
