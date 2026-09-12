@@ -34,7 +34,7 @@ public:
 
     bool pop(T& item) {
         const size_t current_head = head_.load(std::memory_order_relaxed);
-        const size_t current_tail = tail_.load(std::memory_order_release);
+        const size_t current_tail = tail_.load(std::memory_order_acquire);
 
         if (current_head == current_tail) {
             return false;
