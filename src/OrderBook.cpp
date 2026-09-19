@@ -1,5 +1,7 @@
 #include "OrderBook.hpp"
 #include <chrono>
+#include <cstdio>
+#include <algorithm>
 
 typedef void (*TradeCallback)(uint64_t buyId, uint64_t sellId, uint32_t price, uint32_t count, uint64_t timestamp);
 static TradeCallback g_tradeCallback = nullptr;
@@ -73,10 +75,7 @@ bool OrderBook::cancelOrderById(uint64_t orderId) {
 }
 
 void OrderBook::match(Side incomingSide, uint32_t incomingPrice, uint32_t& incomingCount, uint64_t incomingId) {
-    uint64_t now = 0;
-    if (g_tradeCallback) {
-        now = static_cast<uint64_t>(std::chrono::high_resolution_clock::now().time_since_epoch().count());
-    }
+    uint64_t now = static_cast<uint64_t>(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
     if (incomingSide == Side::BUY) {
         while (incomingCount > 0 && bestAskPrice <= incomingPrice) {
@@ -92,7 +91,12 @@ void OrderBook::match(Side incomingSide, uint32_t incomingPrice, uint32_t& incom
                 incomingCount -= matchQty;
                 level.totalVolume -= matchQty;
                 tradeCount++;
+                ofiBuyVolume += matchQty;
 
+                if (tradeCallback) {
+                    Trade t{incomingId, resting.id, resting.price, matchQty, now};
+                    tradeCallback(t);
+                }
                 if (g_tradeCallback) {
                     g_tradeCallback(incomingId, resting.id, resting.price, matchQty, now);
                 }
@@ -138,7 +142,12 @@ void OrderBook::match(Side incomingSide, uint32_t incomingPrice, uint32_t& incom
                 incomingCount -= matchQty;
                 level.totalVolume -= matchQty;
                 tradeCount++;
+                ofiSellVolume += matchQty;
 
+                if (tradeCallback) {
+                    Trade t{resting.id, incomingId, resting.price, matchQty, now};
+                    tradeCallback(t);
+                }
                 if (g_tradeCallback) {
                     g_tradeCallback(resting.id, incomingId, resting.price, matchQty, now);
                 }
@@ -178,6 +187,7 @@ void OrderBook::addOrder(uint64_t id, Side side, uint32_t price, uint32_t count,
 
     match(side, price, count, id);
     if (count == 0 || type == OrderType::IOC) return;
+    if (type == OrderType::MARKET) return;
 
     uint32_t orderIdx = pool.allocate();
     pool[orderIdx] = {id, price, count, side, NULL_INDEX, NULL_INDEX};
@@ -210,6 +220,161 @@ void OrderBook::addOrdersBatch(const std::vector<BatchOrder>& orders) {
     for (const auto& ord : orders) {
         addOrder(ord.id, ord.side, ord.price, ord.count, ord.type);
     }
+}
+
+std::vector<OrderBook::LevelSnapshot> OrderBook::getTopBids(size_t n) const {
+    std::vector<LevelSnapshot> result;
+    result.reserve(n);
+    if (bestBidPrice < MIN_PRICE) return result;
+
+    for (int32_t p = static_cast<int32_t>(bestBidPrice - MIN_PRICE);
+         p >= 0 && result.size() < n; --p) {
+        if (bids[p].headIndex != NULL_INDEX) {
+            result.push_back({static_cast<uint32_t>(p) + MIN_PRICE, bids[p].totalVolume});
+        }
+    }
+    return result;
+}
+
+std::vector<OrderBook::LevelSnapshot> OrderBook::getTopAsks(size_t n) const {
+    std::vector<LevelSnapshot> result;
+    result.reserve(n);
+    if (bestAskPrice > MAX_PRICE) return result;
+
+    for (uint32_t p = bestAskPrice - MIN_PRICE;
+         p < PRICE_RANGE && result.size() < n; ++p) {
+        if (asks[p].headIndex != NULL_INDEX) {
+            result.push_back({p + MIN_PRICE, asks[p].totalVolume});
+        }
+    }
+    return result;
+}
+
+bool OrderBook::amendOrder(uint64_t orderId, uint32_t newPrice, uint32_t newCount) {
+    if (orderId >= orderLookup.size()) return false;
+    uint32_t poolIdx = orderLookup[orderId];
+    if (poolIdx == NULL_INDEX) return false;
+
+    Side side = pool[poolIdx].side;
+    cancelOrder(poolIdx);
+
+    if (newPrice < MIN_PRICE || newPrice > MAX_PRICE || newCount == 0) return false;
+
+    uint32_t orderIdx = pool.allocate();
+    pool[orderIdx] = {orderId, newPrice, newCount, side, NULL_INDEX, NULL_INDEX};
+    orderLookup[orderId] = orderIdx;
+
+    uint32_t levelIdx = newPrice - MIN_PRICE;
+    auto& book = (side == Side::BUY) ? bids : asks;
+    PriceLevel& level = book[levelIdx];
+
+    if (level.tailIndex == NULL_INDEX) {
+        level.headIndex = orderIdx;
+        level.tailIndex = orderIdx;
+    } else {
+        pool[level.tailIndex].nextOrderIndex = orderIdx;
+        pool[orderIdx].prevOrderIndex = level.tailIndex;
+        level.tailIndex = orderIdx;
+    }
+    level.totalVolume += newCount;
+
+    if (side == Side::BUY) {
+        if (newPrice > bestBidPrice) bestBidPrice = newPrice;
+    } else {
+        if (newPrice < bestAskPrice) bestAskPrice = newPrice;
+    }
+
+    return true;
+}
+
+bool OrderBook::saveSnapshot(const std::string& filepath) const {
+    FILE* f = fopen(filepath.c_str(), "wb");
+    if (!f) return false;
+
+    fwrite(&bestBidPrice, sizeof(bestBidPrice), 1, f);
+    fwrite(&bestAskPrice, sizeof(bestAskPrice), 1, f);
+    fwrite(&tradeCount, sizeof(tradeCount), 1, f);
+    fwrite(&ofiBuyVolume, sizeof(ofiBuyVolume), 1, f);
+    fwrite(&ofiSellVolume, sizeof(ofiSellVolume), 1, f);
+
+    for (uint32_t p = 0; p < PRICE_RANGE; ++p) {
+        uint32_t idx = bids[p].headIndex;
+        while (idx != NULL_INDEX) {
+            const Order& o = pool[idx];
+            fwrite(&o.id, sizeof(o.id), 1, f);
+            fwrite(&o.price, sizeof(o.price), 1, f);
+            fwrite(&o.count, sizeof(o.count), 1, f);
+            uint8_t side = static_cast<uint8_t>(o.side);
+            fwrite(&side, sizeof(side), 1, f);
+            idx = o.nextOrderIndex;
+        }
+    }
+
+    for (uint32_t p = 0; p < PRICE_RANGE; ++p) {
+        uint32_t idx = asks[p].headIndex;
+        while (idx != NULL_INDEX) {
+            const Order& o = pool[idx];
+            fwrite(&o.id, sizeof(o.id), 1, f);
+            fwrite(&o.price, sizeof(o.price), 1, f);
+            fwrite(&o.count, sizeof(o.count), 1, f);
+            uint8_t side = static_cast<uint8_t>(o.side);
+            fwrite(&side, sizeof(side), 1, f);
+            idx = o.nextOrderIndex;
+        }
+    }
+
+    uint64_t sentinel = 0xFFFFFFFFFFFFFFFF;
+    fwrite(&sentinel, sizeof(sentinel), 1, f);
+    fclose(f);
+    return true;
+}
+
+bool OrderBook::loadSnapshot(const std::string& filepath) {
+    FILE* f = fopen(filepath.c_str(), "rb");
+    if (!f) return false;
+
+    bids.fill(PriceLevel{});
+    asks.fill(PriceLevel{});
+    pool.reset();
+    std::fill(orderLookup.begin(), orderLookup.end(), NULL_INDEX);
+
+    fread(&bestBidPrice, sizeof(bestBidPrice), 1, f);
+    fread(&bestAskPrice, sizeof(bestAskPrice), 1, f);
+    fread(&tradeCount, sizeof(tradeCount), 1, f);
+    fread(&ofiBuyVolume, sizeof(ofiBuyVolume), 1, f);
+    fread(&ofiSellVolume, sizeof(ofiSellVolume), 1, f);
+
+    uint64_t id;
+    while (fread(&id, sizeof(id), 1, f) == 1) {
+        if (id == 0xFFFFFFFFFFFFFFFF) break;
+
+        uint32_t price, count;
+        uint8_t side;
+        fread(&price, sizeof(price), 1, f);
+        fread(&count, sizeof(count), 1, f);
+        fread(&side, sizeof(side), 1, f);
+
+        uint32_t orderIdx = pool.allocate();
+        pool[orderIdx] = {id, price, count, static_cast<Side>(side), NULL_INDEX, NULL_INDEX};
+        if (id < orderLookup.size()) orderLookup[id] = orderIdx;
+
+        uint32_t levelIdx = price - MIN_PRICE;
+        auto& book = (static_cast<Side>(side) == Side::BUY) ? bids : asks;
+        PriceLevel& level = book[levelIdx];
+
+        if (level.tailIndex == NULL_INDEX) {
+            level.headIndex = orderIdx;
+            level.tailIndex = orderIdx;
+        } else {
+            pool[level.tailIndex].nextOrderIndex = orderIdx;
+            pool[orderIdx].prevOrderIndex = level.tailIndex;
+            level.tailIndex = orderIdx;
+        }
+        level.totalVolume += count;
+    }
+
+    fclose(f);
+    return true;
 }
 
 extern "C" {

@@ -1,6 +1,8 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
+#include <pybind11/functional.h>
 #include "OrderBook.hpp"
+#include "BookManager.hpp"
 
 namespace py = pybind11;
 
@@ -13,6 +15,7 @@ PYBIND11_MODULE(nova_engine, m) {
     py::enum_<OrderType>(m, "OrderType")
         .value("LIMIT", OrderType::LIMIT)
         .value("IOC", OrderType::IOC)
+        .value("MARKET", OrderType::MARKET)
         .export_values();
 
     py::class_<Trade>(m, "Trade")
@@ -31,6 +34,10 @@ PYBIND11_MODULE(nova_engine, m) {
         .def_readwrite("side", &BatchOrder::side)
         .def_readwrite("type", &BatchOrder::type);
 
+    py::class_<OrderBook::LevelSnapshot>(m, "LevelSnapshot")
+        .def_readonly("price", &OrderBook::LevelSnapshot::price)
+        .def_readonly("volume", &OrderBook::LevelSnapshot::volume);
+
     py::class_<OrderBook>(m, "OrderBook")
         .def(py::init<>())
         .def("addOrder", &OrderBook::addOrder,
@@ -38,7 +45,21 @@ PYBIND11_MODULE(nova_engine, m) {
         .def("addOrdersBatch", &OrderBook::addOrdersBatch, py::arg("orders"))
         .def("cancelOrder", &OrderBook::cancelOrder, py::arg("orderPoolIndex"))
         .def("cancelOrderById", &OrderBook::cancelOrderById, py::arg("orderId"))
+        .def("amendOrder", &OrderBook::amendOrder, py::arg("orderId"), py::arg("newPrice"), py::arg("newCount"))
         .def("getBestBid", &OrderBook::getBestBid)
         .def("getBestAsk", &OrderBook::getBestAsk)
-        .def("getTradeCount", &OrderBook::getTradeCount);
+        .def("getTradeCount", &OrderBook::getTradeCount)
+        .def("getTopBids", &OrderBook::getTopBids, py::arg("n") = 5)
+        .def("getTopAsks", &OrderBook::getTopAsks, py::arg("n") = 5)
+        .def("getOFI", &OrderBook::getOFI)
+        .def("resetOFI", &OrderBook::resetOFI)
+        .def("setTradeCallback", &OrderBook::setTradeCallback, py::arg("callback"))
+        .def("saveSnapshot", &OrderBook::saveSnapshot, py::arg("filepath"))
+        .def("loadSnapshot", &OrderBook::loadSnapshot, py::arg("filepath"));
+        py::class_<BookManager>(m, "BookManager")
+    .def(py::init<>())
+    .def("getOrCreate", &BookManager::getOrCreate, py::arg("symbol"), py::return_value_policy::reference)
+    .def("hasSymbol", &BookManager::hasSymbol, py::arg("symbol"))
+    .def("getSymbols", &BookManager::getSymbols)
+    .def("removeSymbol", &BookManager::removeSymbol, py::arg("symbol"));
 }

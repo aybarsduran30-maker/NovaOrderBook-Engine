@@ -2,6 +2,8 @@
 #include <array>
 #include <vector>
 #include <cstdint>
+#include <functional>
+#include <string>
 #include "Order.hpp"
 #include "MemoryPool.hpp"
 
@@ -19,16 +21,43 @@ public:
         uint32_t totalVolume{0};
     };
 
+    struct LevelSnapshot {
+        uint32_t price;
+        uint32_t volume;
+    };
+
     OrderBook();
 
     void addOrder(uint64_t id, Side side, uint32_t price, uint32_t count, OrderType type = OrderType::LIMIT);
     void addOrdersBatch(const std::vector<BatchOrder>& orders);
     bool cancelOrderById(uint64_t orderId);
+    bool amendOrder(uint64_t orderId, uint32_t newPrice, uint32_t newCount);
     void cancelOrder(uint32_t orderPoolIndex);
 
     uint32_t getBestBid() const { return bestBidPrice; }
     uint32_t getBestAsk() const { return bestAskPrice; }
     uint64_t getTradeCount() const { return tradeCount; }
+
+    double getOFI() const {
+        int64_t total = ofiBuyVolume + ofiSellVolume;
+        if (total == 0) return 0.0;
+        return static_cast<double>(ofiBuyVolume - ofiSellVolume) / static_cast<double>(total);
+    }
+
+    void resetOFI() {
+        ofiBuyVolume = 0;
+        ofiSellVolume = 0;
+    }
+
+    void setTradeCallback(std::function<void(const Trade&)> cb) {
+        tradeCallback = std::move(cb);
+    }
+
+    std::vector<LevelSnapshot> getTopBids(size_t n) const;
+    std::vector<LevelSnapshot> getTopAsks(size_t n) const;
+
+    bool saveSnapshot(const std::string& filepath) const;
+    bool loadSnapshot(const std::string& filepath);
 
 private:
     std::array<PriceLevel, PRICE_RANGE> bids;
@@ -39,6 +68,9 @@ private:
     uint32_t bestBidPrice;
     uint32_t bestAskPrice;
     uint64_t tradeCount;
+    int64_t ofiBuyVolume{0};
+    int64_t ofiSellVolume{0};
+    std::function<void(const Trade&)> tradeCallback;
 
     void match(Side incomingSide, uint32_t incomingPrice, uint32_t& incomingCount, uint64_t incomingId);
 };
