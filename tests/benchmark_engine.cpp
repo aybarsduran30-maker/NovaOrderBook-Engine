@@ -5,6 +5,20 @@
 #include <algorithm>
 #include "OrderBook.hpp"
 
+#if defined(_MSC_VER)
+#pragma optimize("", off)
+template <typename T>
+void escape(T&& val) {
+    (void)val;
+}
+#pragma optimize("", on)
+#else
+template <typename T>
+void escape(T&& val) {
+    asm volatile("" : : "g"(val) : "memory");
+}
+#endif
+
 int main() {
     constexpr size_t WARMUP_ROUNDS = 10000;
     constexpr size_t BENCHMARK_ROUNDS = 100000;
@@ -20,7 +34,7 @@ int main() {
 
     for (size_t i = 0; i < BENCHMARK_ROUNDS; ++i) {
         uint64_t order_id = WARMUP_ROUNDS + i;
-        uint32_t price = 10000 + (i % 50);
+        uint32_t price = 10000 + (static_cast<uint32_t>(i) % 50);
         uint32_t qty = 5;
 
         auto start = std::chrono::high_resolution_clock::now();
@@ -29,6 +43,7 @@ int main() {
 
         auto ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
         latencies.push_back(ns);
+        escape(book.getBestBid());
     }
 
     std::sort(latencies.begin(), latencies.end());

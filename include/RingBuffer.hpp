@@ -57,10 +57,10 @@ public:
 
 private:
     static constexpr size_t BufferMask = Capacity - 1;
-    static constexpr size_t HardwareDestructiveInterferenceSize = 64;
+    static constexpr size_t CacheLineSize = 64;
 
     std::vector<T> buffer_;
 
-    alignas(HardwareDestructiveInterferenceSize) std::atomic<size_t> head_{0};
-    alignas(HardwareDestructiveInterferenceSize) std::atomic<size_t> tail_{0};
+    alignas(CacheLineSize) std::atomic<size_t> head_{0};
+    alignas(CacheLineSize) std::atomic<size_t> tail_{0};
 };
